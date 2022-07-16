@@ -22,16 +22,20 @@ var displayEvent = function(searchEvent) {
     
 } 
 
+
+
 var eventSubmitHandler = function(event) {
-    var event = eventInputEl.value;
-    if(event) {
-        getEventNear(event);
+    event.preventDefault();
+    
+    var events = eventInputEl.value;
+    if(events) {
+        getEventNear(events); 
         eventInputEl.value = "";
     }
 }
 
 
-eventFormEl.addEventListener("submit", eventSubmitHandler);
+$("event-form").submit(eventSubmitHandler);
 
 //fetch(`https://api.seatgeek.com/2/events?geoip=98.213.245.205&range=12mi&client_id=Mjc4NjY0OTJ8MTY1Nzg0MTg4Ni44MzQwMTky`)
 //.then(res => res.json())
