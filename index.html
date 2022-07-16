@@ -5,12 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title class="bg-["https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"]>Find The Event</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundImage: {
+              'hero-image': "url('./assets/images/concert.png')",
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="" />
+    <title class="bg-hero-image">Find The Event</title>
   </head>
-  <div>
-    <!-- Hero image -->
-    <header class="text-center text-[40px] my-20">Find The Event</header>
+  <div class="bg-hero-image">
+    <header class="text-center text-[100px] my-12 h-52 align-middle text-cyan-400">Find The Event</header>
   </div>
   <body>
     <div class="search-container flex flex-row">
@@ -27,10 +37,10 @@
         </div>
       </div>
       <div id="rightSection"  class="mx-40">
-        <div id="eventResults" class="mb-40">
+        <div id="eventResults" class="mb-40 border-2 border-black rounded-md">
           <h1>Your event location</h1>
         </div>
-        <div id="eventDirections">
+        <div id="eventDirections" class="border-2 border-black rounded-md">
           <h1>Directions to your event</h1>
           <p>
             * turn around <br/>
