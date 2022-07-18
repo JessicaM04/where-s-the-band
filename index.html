@@ -5,11 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Document</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundImage: {
+              'hero-image': "url('./assets/images/concert.png')",
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="" />
+    <title class="bg-hero-image">Event Finder</title>
   </head>
+  <div class="bg-hero-image">
+    <header class="text-left text-[60px]  h-52 text-white">Event Finder</header>
+  </div>
   <body>
+    <div class="search-container flex flex-row bg-slate-300">
+      <div id="leftSection">
+        <div id="searchParameters" class="ml-10">
+          <h1 class="pt-10">Search for an event:</h1>
+          <input id="eventName" class="border-2 border-black rounded-md bg-slate-300" type="text"/>        
+          <button id="searchBtn" class="mb-12" type="submit">Search</button>
+          <form id="event-form"></form> 
+        </div>
+        <div id="searchHistory" class="border-2 border-black rounded-md px-10 py-10 ml-10">
+          <p>This is where the search history results will go.  I know we will<br/>
+            remove this text I just wanted to add extra words so we can<br/>
+            see how it will look.</p>
+        </div>
+      </div>
+      <div id="rightSection"  class="mx-40 pt-10">
+        <div id="eventResults" class="mb-40 border-2 border-black rounded-md px-10 py-10">
+          <h1>Your event location</h1>
+        </div>
+        <div id="eventDirections" class="border-2 border-black rounded-md px-10 py-10">
+          <h1>Directions to your event</h1>
+          <p>
+            * turn around <br/>
+            * touch your toes <br/>
+            * reach for the sky <br/>
+            * hop on one foot <br/>
+            * stand up straight <br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
+  <footer class="bg-slate-300 pt-40">Created by Team RRMJ</footer>
 </html>
