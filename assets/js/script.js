@@ -5,7 +5,6 @@ var eventFormEl = document.querySelector("event-form")
 
 var getEventNear = function() {
     var apiUrl = "https://api.seatgeek.com/2/events?geoip=98.213.245.205&range=12mi&client_id=Mjc4NjY0OTJ8MTY1Nzg0MTg4Ni44MzQwMTky";
-
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
         response.json().then(function(data) {
