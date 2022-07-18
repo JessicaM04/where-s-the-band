@@ -16,7 +16,7 @@
         }
       }
     </script>
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title class="bg-hero-image">Event Finder</title>
   </head>
   <div class="bg-hero-image">
@@ -44,12 +44,36 @@
         <div id="eventDirections" class="border-2 border-black rounded-md">
           <h1>Directions to your event</h1>
           <div>
+            <button id="locBtn">Enter Your Location</button>
             <ul id="directionsList">
             </ul>
           </div>          
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+  <div id="form-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="form-modal">Your Location</h5>
+          <span class="close"></span>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="modalCity">City</label>
+              <input class="form-control" id="modalCity"></input>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="submitModal">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
