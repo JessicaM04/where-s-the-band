@@ -45,6 +45,7 @@ var eventSubmitHandler = function (event) {
 //.catch(err => console.log(err));
 
 
+
 var displayDirections = function(origin,destination) {
     var apiStart="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin="
     var key="&key=AIzaSyD977niwAg_ga4uwIxlClUPRMYJ9IcsNCA"
@@ -131,6 +132,9 @@ submitModal.addEventListener("click", function() {
 //     }
 //   });
 
+
+// function to save the event search history to local storage
+
 var saveEvent = function (events) {
   if (!eventHistory.includes(events)) {
     eventHistory.push(events);
@@ -142,7 +146,11 @@ var saveEvent = function (events) {
         "</a>"
     );
   }
+  // save the eventHistory array to local storage
+
   localStorage.setItem("searcheventHistory", JSON.stringify(eventHistory));
+  // save the lastCitySearched to local storage
+
   localStorage.setItem(
     "recentEventSearched",
     JSON.stringify(recentEventSearched)
