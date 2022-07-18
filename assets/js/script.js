@@ -44,6 +44,8 @@ var eventSubmitHandler = function (event) {
 //})
 //.catch(err => console.log(err));
 
+// function to save the event search history to local storage
+
 var saveEvent = function (events) {
   if (!eventHistory.includes(events)) {
     eventHistory.push(events);
@@ -55,7 +57,11 @@ var saveEvent = function (events) {
         "</a>"
     );
   }
+  // save the eventHistory array to local storage
+
   localStorage.setItem("searcheventHistory", JSON.stringify(eventHistory));
+  // save the lastCitySearched to local storage
+
   localStorage.setItem(
     "recentEventSearched",
     JSON.stringify(recentEventSearched)
