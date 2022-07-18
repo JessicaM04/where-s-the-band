@@ -9,6 +9,7 @@ Enter a band name to find out dates and locations where your favorite band is pl
 ## Deployed Application
 
 ## GitHub Repository Link
+https://github.com/JessicaM04/wheres-the-band
 
 ## Technology Used
 
@@ -20,7 +21,6 @@ Enter a band name to find out dates and locations where your favorite band is pl
 - Jquery
 
 ## Contributors
-
 - Jessica McNamara - JessicaM04
 - Regetta Harris - RKH1988
 - Rodolfo Ramos - rramosx11
