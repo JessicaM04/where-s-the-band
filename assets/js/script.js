@@ -58,7 +58,7 @@ var getEventNear = function (events) {
 };
 
 var displayEvent = function (events) {
-  eventResults.innerHTML = "";
+  eventResultsEl.innerHTML = "";
   var limitOfEvents = 5;
   for (let i = 0; i < limitOfEvents; i++) {
     var currentEvent = events[i];
@@ -74,10 +74,10 @@ var displayEvent = function (events) {
     eventHolder.setAttribute("data-lon", currentEvent.venue.location.lon);
     eventImg.setAttribute("src", currentEvent.performers[0].image);
     eventHolder.append(titleHolder, eventImg, addressHolder1, addressHolder2);
-    eventResults.append(eventHolder);
+    eventResultsEl.append(eventHolder);
   }
-
-  saveEvent();
+  recentEventSearched = currentEvent;
+  saveEvent(eventInputEl.value);
 };
 
 var eventSubmitHandler = function (event) {
@@ -149,7 +149,15 @@ var saveEvent = function (events) {
   if (!eventHistory.includes(events)) {
     eventHistory.push(events);
     $("#searchHistory").append(
-      "<a href='#' class='' id='" + events + "'>" + events + "</a>"
+      // "<a href='#' class='border-2 border-black rounded-md px-10 py-10 ml-10' id='" +
+      //   events +
+      //   "'>" +
+      //   events +
+      //   "</a>"
+      "<a href='#' class='border-2 border-black rounded-md px-10 py-10 ml-10' id='" +
+        events +
+        "'>" +
+        "</a>"
     );
   }
   // save the eventHistory array to local storage
@@ -157,10 +165,10 @@ var saveEvent = function (events) {
   localStorage.setItem("searcheventHistory", JSON.stringify(eventHistory));
   // save the lastCitySearched to local storage
 
-  // localStorage.setItem(
-  //   "recentEventSearched",
-  //   JSON.stringify(recentEventSearched)
-  // );
+  localStorage.setItem(
+    "recentEventSearched",
+    JSON.stringify(recentEventSearched)
+  );
 
   //display event history array
   loadEventHistory();
@@ -168,7 +176,7 @@ var saveEvent = function (events) {
 
 var loadEventHistory = function () {
   eventHistory = JSON.parse(localStorage.getItem("searcheventHistory"));
-  // recentEventSearched = JSON.parse(localStorage.getItem("recentEventSearched"));
+  recentEventSearched = JSON.parse(localStorage.getItem("recentEventSearched"));
 
   // if nothing in localStorage, create an empty eventHistory array and an empty recentEventSearched string
   if (!eventHistory) {
@@ -186,7 +194,7 @@ var loadEventHistory = function () {
   for (i = 0; i < eventHistory.length; i++) {
     // add the event as a link, set it's id, and append it to the search-history ul
     $("#searchHistory").append(
-      "<a href='#' class='list-group-item list-group-item-action' id='" +
+      "<a href='#' class='border-2 border-black rounded-md px-10 py-10 ml-10' id='" +
         eventHistory[i] +
         "'>" +
         eventHistory[i] +
