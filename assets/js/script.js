@@ -58,8 +58,9 @@ var displayEvent = function (events) {
 
 };
 
-var eventSubmitHandler = function (event) {
-  event.preventDefault();
+// var displayEvent = function (searchEvent) {
+//   eventContainerEl.textContent = "";
+//   searchEventEl.textContent = searchEvent;
 
 
   var events = eventInputEl.value.trim();
@@ -81,6 +82,12 @@ var eventSubmitHandler = function (event) {
 //container with event name and location, append it
 //dynamically set up divs, fill with textcontent, header \
 
+//add these to the end of your fetch function
+//lat = data.venue.location.lat;
+//lon = data.venue.location.lon;
+
+//at the end of your code before you close it out with the }, add the following line
+//displayDirections(lat,long);
 
 
 
@@ -140,66 +147,66 @@ var displayDirections = function(lat,lon) {
 
 // function to save the event search history to local storage
 
-var saveEvent = function (events) {
-  if (!eventHistory.includes(events)) {
-    eventHistory.push(events);
-    $("#search-history").append(
-      "<a href='#' class='list-group-item list-group-item-action' id='" +
-        events +
-        "'>" +
-        events +
-        "</a>"
-    );
-  }
-  // save the eventHistory array to local storage
+// var saveEvent = function (events) {
+//   if (!eventHistory.includes(events)) {
+//     eventHistory.push(events);
+//     $("#search-history").append(
+//       "<a href='#' class='list-group-item list-group-item-action' id='" +
+//         events +
+//         "'>" +
+//         events +
+//         "</a>"
+//     );
+//   }
+//   // save the eventHistory array to local storage
 
-  localStorage.setItem("searcheventHistory", JSON.stringify(eventHistory));
-  // save the lastCitySearched to local storage
+//   localStorage.setItem("searcheventHistory", JSON.stringify(eventHistory));
+//   // save the lastCitySearched to local storage
 
-  localStorage.setItem(
-    "recentEventSearched",
-    JSON.stringify(recentEventSearched)
-  );
+//   localStorage.setItem(
+//     "recentEventSearched",
+//     JSON.stringify(recentEventSearched)
+//   );
 
-  //display event history array
-  loadEventHistory();
-};
+//   //display event history array
+//   loadEventHistory();
+// };
 
-var loadEventHistory = function () {
-  eventHistory = JSON.parse(localStorage.getItem("searcheventHistory"));
-  recentEventSearched = JSON.parse(localStorage.getItem("recentEventSearched"));
+// var loadEventHistory = function () {
+//   eventHistory = JSON.parse(localStorage.getItem("searcheventHistory"));
+//   recentEventSearched = JSON.parse(localStorage.getItem("recentEventSearched"));
 
-  // if nothing in localStorage, create an empty eventHistory array and an empty recentEventSearched string
-  if (!eventHistory) {
-    eventHistory = [];
-  }
+//   // if nothing in localStorage, create an empty eventHistory array and an empty recentEventSearched string
+//   if (!eventHistory) {
+//     eventHistory = [];
+//   }
 
-  if (!recentEventSearched) {
-    recentEventSearched = "";
-  }
+//   if (!recentEventSearched) {
+//     recentEventSearched = "";
+//   }
 
-  // clear any previous values from th search-history ul
-  $("#search-history").empty();
+//   // clear any previous values from th search-history ul
+//   $("#search-history").empty();
 
-  // for loop that will run through all the events found in the array
-  for (i = 0; i < eventHistory.length; i++) {
-    // add the event as a link, set it's id, and append it to the search-history ul
-    $("#search-history").append(
-      "<a href='#' class='list-group-item list-group-item-action' id='" +
-        eventHistory[i] +
-        "'>" +
-        eventHistory[i] +
-        "</a>"
-    );
-  }
-};
-// load search history from local storage
-loadEventHistory();
+//   // for loop that will run through all the events found in the array
+//   for (i = 0; i < eventHistory.length; i++) {
+//     // add the event as a link, set it's id, and append it to the search-history ul
+//     $("#search-history").append(
+//       "<a href='#' class='list-group-item list-group-item-action' id='" +
+//         eventHistory[i] +
+//         "'>" +
+//         eventHistory[i] +
+//         "</a>"
+//     );
+//   }
+// };
+// // load search history from local storage
+// loadEventHistory();
 
-// start page with the last event searched if there is one
-if (recentEventSearched != "") {
-  getEventNear(recentEventSearched);
-}
+// // start page with the last event searched if there is one
+// if (recentEventSearched != "") {
+//   getEventNear(recentEventSearched);
+// }
 
 searchBtnEl.addEventListener("click", eventSubmitHandler);
 eventResultsEl.addEventListener("click", function(event){
