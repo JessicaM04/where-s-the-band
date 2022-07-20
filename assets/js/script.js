@@ -72,6 +72,7 @@ var displayEvent = function (events) {
     var addressHolder1 = document.createElement("p")
     var addressHolder2 = document.createElement("p")
     var timeDateHolder = document.createElement("p")
+    var timeDateHolder = moment(currentEvent.datetime_local).format("LLLL")
 
     
     titleHolder.textContent = currentEvent.title + " - " + currentEvent.type
