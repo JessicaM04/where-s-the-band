@@ -221,4 +221,5 @@ $("#searchHistory").on("click", function (event) {
   let prevEvent = $(event.target).closest("a").attr("id");
   // pass it's id value to the getEventNear function
   getEventNear(prevEvent);
+  console.log(prevEvent);
 });
