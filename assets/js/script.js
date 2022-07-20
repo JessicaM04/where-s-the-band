@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // var eventInputEl = document.querySelector("#eventname");
 // var eventContainerEl = document.querySelector("#event-container");
 // var searchEventEl = document.querySelector("#event-search");
@@ -17,7 +17,7 @@
 //       response.json().then(function (data) {
 //         console.log(data);
 //         displayEvent(data);
-=======
+
 var eventInputEl = document.querySelector("#eventName");
 var eventContainerEl = document.querySelector("#event-container");
 var searchEventEl = document.querySelector("#event-search");
@@ -27,7 +27,7 @@ var eventResultsEl = document.querySelector("#eventResults")
 
 
 var eventHistory = []
->>>>>>> develop
+
 
 
 //       });

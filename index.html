@@ -23,14 +23,18 @@
     <header class="text-left text-[60px] h-52 text-white ml-10">Event Finder</header>
   </div>
   <body>
-    <div class="search-container flex flex-row bg-slate-300">
-      <div id="leftSection">
-        <div id="searchParameters" class="ml-10">
-          <h1 class="pt-10">Search for an event:</h1>
-          <form id="event-form">
-          <input id="eventName" class="border-2 border-black rounded-md bg-slate-300" type="text"/>        
-          <button id="searchBtn" class="mb-12" type="submit">Search</button>
-          </form> 
+    <div class="bg-slate-300">
+      <div class="search-container bg-slate-300 flex flex-wrap">
+        <div id="leftSection w-1/4">
+          <div id="searchParameters" class="ml-10 w-full">
+            <h1 class="pt-10 pb-2 mr-20">Search For An Event By City:</h1>
+            <input id="eventName" class="border-2 border-black rounded-md bg-slate-300" type="text"/>        
+            <button id="searchBtn" class="mb-12" type="submit">Search</button>
+            <form id="event-form"></form> 
+          </div>
+          <div id="searchHistory" class="ml-10 border-2 border-black rounded-md">
+            <p>Search history results go here</p>
+          </div>
         </div>
         <div id="searchHistory" class="border-2 border-black rounded-md px-10 py-10 ml-10">
           <p>This is where the search history results will go.  I know we will<br/>
