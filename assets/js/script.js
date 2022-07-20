@@ -71,13 +71,17 @@ var displayEvent = function (events) {
     var titleHolder = document.createElement("h3")
     var addressHolder1 = document.createElement("p")
     var addressHolder2 = document.createElement("p")
+    var timeDateHolder = document.createElement("p")
+
+    
     titleHolder.textContent = currentEvent.title + " - " + currentEvent.type
     addressHolder1.textContent = currentEvent.venue.address 
     addressHolder2.textContent = currentEvent.venue.extended_address
+    timeDateHolder.textContent = currentEvent.datetime_local
     eventHolder.setAttribute("data-lat", currentEvent.venue.location.lat)
     eventHolder.setAttribute("data-lon", currentEvent.venue.location.lon)
     eventImg.setAttribute("src", currentEvent.performers[0].image)
-    eventHolder.append(titleHolder, eventImg, addressHolder1, addressHolder2)
+    eventHolder.append(titleHolder, eventImg, addressHolder1, addressHolder2, timeDateHolder)
     eventResults.append(eventHolder)
   }
 
