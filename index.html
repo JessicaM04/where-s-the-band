@@ -23,25 +23,14 @@
     <header class="text-left text-[60px]  h-52 text-white">Event Finder</header>
   </div>
   <body>
-<<<<<<< HEAD
-    <main class="flex-row justify-space-between">
-      <div class="col-12 col-md-4"></div>
-          <h3 class="text-uppercase">Search By Location</h3>
-          <form id="event-form">
-            <label class="form-label" for="eventname">Event</label>
-            <input name="eventname" id="eventname" type="text" autofocus="true" class="form-input" />
-            <button type="submit" class="btn">Get Events Near Me</button>
-          </form>
-    <div class="search-container flex flex-row">
-=======
     <div class="search-container flex flex-row bg-slate-300">
->>>>>>> 1c05931443dbedde2310245da27ba07277280bb9
       <div id="leftSection">
         <div id="searchParameters" class="ml-10">
           <h1 class="pt-10">Search for an event:</h1>
+          <form id="event-form">
           <input id="eventName" class="border-2 border-black rounded-md bg-slate-300" type="text"/>        
           <button id="searchBtn" class="mb-12" type="submit">Search</button>
-          <form id="event-form"></form> 
+          </form> 
         </div>
         <div id="searchHistory" class="border-2 border-black rounded-md px-10 py-10 ml-10">
           <p>This is where the search history results will go.  I know we will<br/>
@@ -50,9 +39,12 @@
         </div>
       </div>
       <div id="rightSection"  class="mx-40 pt-10">
-        <div id="eventResults" class="mb-40 border-2 border-black rounded-md px-10 py-10">
+        <div class="mb-40 border-2 border-black rounded-md px-10 py-10">
           <h1>Your event location</h1>
+          <div id="eventResults">
+          </div>
         </div>
+        
         <div id="eventDirections" class="border-2 border-black rounded-md px-10 py-10">
           <h1>Directions to your event</h1>
           <div>
