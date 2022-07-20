@@ -36,20 +36,26 @@
             <p>Search history results go here</p>
           </div>
         </div>
-        <div id="rightSection"  class="pt-10 ml-10 mb-10 flex flex-wrap w-3/4">
-          <div id="eventResults" class="border-2 border-black rounded-md px-10 py-10 mr-20 mb-10">
-            <h1>Your event location</h1>
+        <div id="searchHistory" class="border-2 border-black rounded-md px-10 py-10 ml-10">
+          <p>This is where the search history results will go.  I know we will<br/>
+            remove this text I just wanted to add extra words so we can<br/>
+            see how it will look.</p>
+        </div>
+      </div>
+      <div id="rightSection"  class="mx-40 pt-10">
+        <div class="mb-40 border-2 border-black rounded-md px-10 py-10">
+          <h1>Your event location</h1>
+          <div id="eventResults">
           </div>
-          <div id="eventDirections" class="border-2 border-black rounded-md px-10 py-10">
-            <h1>Directions to your event</h1>
-            <h1 class="pt-10 pb-2">Your Starting Location:</h1>
-            <input id="startLocation" class="border-2 border-black rounded-md bg-slate-300" type="text"/>
-            <button id="locBtn" class="mb-12" type="submit">Get Directions</button>
-            <div>
-              <ul id="directionsList">
-              </ul>
-            </div>          
-          </div>
+        </div>
+        
+        <div id="eventDirections" class="border-2 border-black rounded-md px-10 py-10">
+          <h1>Directions to your event</h1>
+          <div>
+            <button id="locBtn">Enter Your Location</button>
+            <ul id="directionsList">
+            </ul>
+          </div>          
         </div>
       </div>
     </div>
