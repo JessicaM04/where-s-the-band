@@ -22,8 +22,9 @@ var searchEventEl = document.querySelector("#event-search");
 var eventFormEl = document.querySelector("event-form");
 var searchBtnEl = document.querySelector("#searchBtn");
 var eventResultsEl = document.querySelector("#eventResults");
+var directionsListEl = document.querySelector("#directionsList");
+
 var eventHistory = [];
-var recentEventSearched = "";
 
 //       });
 //     }
@@ -102,16 +103,19 @@ var eventSubmitHandler = function (event) {
 //container with event name and location, append it
 //dynamically set up divs, fill with textcontent, header \
 
+//   recentEventSearched = eventData.name;
+// to be added at a later ppint
+//   saveEvent(eventData.name);
+
 var displayDirections = function (lat, lon) {
   var apiStart =
     "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=";
   var key = "&key=AIzaSyD977niwAg_ga4uwIxlClUPRMYJ9IcsNCA";
   var apiMiddle = "&destination=";
-  var origin = "Greensboro"; //document.getElementById("#locBtn")
+  var origin = "Greensboro"; //document.getElementById("#startLocation").value
   var destination = lat + "," + lon;
   var apiUrl = apiStart + origin + apiMiddle + destination + key;
   fetch(apiUrl).then(function (response) {
-    var directionsListEl = document.querySelector("#directionsList");
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
@@ -129,19 +133,6 @@ var displayDirections = function (lat, lon) {
     }
   });
 };
-
-//   // save button in modal was clicked
-//   $("#form-modal .btn-save").click(function() {
-//     // get form values
-//     origin = $("#modalCity").val();
-
-//     if (origin) {
-//       displayDirections(origin,destination);
-
-//       // close modal
-//       $("#form-modal").modal("hide");
-//     }
-//   });
 
 // function to save the event search history to local storage
 
@@ -212,11 +203,13 @@ if (recentEventSearched != "") {
 
 searchBtnEl.addEventListener("click", eventSubmitHandler);
 eventResultsEl.addEventListener("click", function (event) {
+  directionsListEl.innerHTML = "";
+
   var lat = event.target.parentNode.dataset.lat;
   var lon = event.target.parentNode.dataset.lon;
   displayDirections(lat, lon);
 });
-$("#searchHistory").on("click", function (event) {
+$("#search-history").on("click", function (event) {
   // get the links id value
   let prevEvent = $(event.target).closest("a").attr("id");
   // pass it's id value to the getEventNear function
