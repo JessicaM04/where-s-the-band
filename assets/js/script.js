@@ -8,22 +8,23 @@
 // var recentEventSearched = "";
 
 // var getEventNear = function () {
-//   var apiUrl =
-//     "https://api.seatgeek.com/2/events?geoip=98.213.245.205&range=12mi&client_id=Mjc4NjY0OTJ8MTY1Nzg0MTg4Ni44MzQwMTky";
+    //   var apiUrl =
+    //     "https://api.seatgeek.com/2/events?geoip=98.213.245.205&range=12mi&client_id=Mjc4NjY0OTJ8MTY1Nzg0MTg4Ni44MzQwMTky";
     
 
-//   fetch(apiUrl).then(function (response) {
+    //   fetch(apiUrl).then(function (response) {
 //     if (response.ok) {
 //       response.json().then(function (data) {
-//         console.log(data);
-//         displayEvent(data);
-
-var eventInputEl = document.querySelector("#eventName");
-var eventContainerEl = document.querySelector("#event-container");
+    //         console.log(data);
+    //         displayEvent(data);
+    
+    var eventInputEl = document.querySelector("#eventName");
+    var eventContainerEl = document.querySelector("#event-container");
 var searchEventEl = document.querySelector("#event-search");
 var eventFormEl = document.querySelector("event-form");
 var searchBtnEl = document.querySelector("#searchBtn")
 var eventResultsEl = document.querySelector("#eventResults")
+var directionsListEl= document.querySelector("#directionsList");
 
 
 var eventHistory = []
@@ -125,11 +126,10 @@ var displayDirections = function(lat,lon) {
   var apiStart="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin="
   var key="&key=AIzaSyD977niwAg_ga4uwIxlClUPRMYJ9IcsNCA"
   var apiMiddle="&destination="
-  var origin = "Greensboro"//document.getElementById("#locBtn")
+  var origin = "Greensboro"//document.getElementById("#startLocation").value
   var destination = lat+","+lon;
   var apiUrl=apiStart+origin+apiMiddle+destination+key;
   fetch(apiUrl).then(function(response){
-      var directionsListEl= document.querySelector("#directionsList");
       if(response.ok) {
         response.json().then(function(data){
           console.log(data);
@@ -148,19 +148,6 @@ var displayDirections = function(lat,lon) {
   })
 };
 
-  
-//   // save button in modal was clicked
-//   $("#form-modal .btn-save").click(function() {
-//     // get form values
-//     origin = $("#modalCity").val();
-  
-//     if (origin) {
-//       displayDirections(origin,destination);
-  
-//       // close modal
-//       $("#form-modal").modal("hide");
-//     }
-//   });
 
 
 // function to save the event search history to local storage
@@ -228,9 +215,12 @@ var displayDirections = function(lat,lon) {
 
 searchBtnEl.addEventListener("click", eventSubmitHandler);
 eventResultsEl.addEventListener("click", function(event){
-  var lat = event.target.parentNode.dataset.lat
+  directionsListEl.innerHTML=""
+  
+    var lat = event.target.parentNode.dataset.lat
   var lon = event.target.parentNode.dataset.lon
   displayDirections(lat,lon);
+
 })
 $("#search-history").on("click", function (event) {
   // get the links id value
