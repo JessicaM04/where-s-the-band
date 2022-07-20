@@ -76,7 +76,7 @@ var displayEvent = function (events) {
     eventHolder.append(titleHolder, eventImg, addressHolder1, addressHolder2);
     eventResultsEl.append(eventHolder);
   }
-  recentEventSearched = currentEvent;
+  // recentEventSearched = currentEvent;
   saveEvent(eventInputEl.value);
 };
 
@@ -165,10 +165,10 @@ var saveEvent = function (events) {
   localStorage.setItem("searcheventHistory", JSON.stringify(eventHistory));
   // save the lastCitySearched to local storage
 
-  localStorage.setItem(
-    "recentEventSearched",
-    JSON.stringify(recentEventSearched)
-  );
+  // localStorage.setItem(
+  //   "recentEventSearched",
+  //   JSON.stringify(recentEventSearched)
+  // );
 
   //display event history array
   loadEventHistory();
@@ -176,16 +176,16 @@ var saveEvent = function (events) {
 
 var loadEventHistory = function () {
   eventHistory = JSON.parse(localStorage.getItem("searcheventHistory"));
-  recentEventSearched = JSON.parse(localStorage.getItem("recentEventSearched"));
+  // recentEventSearched = JSON.parse(localStorage.getItem("recentEventSearched"));
 
   // if nothing in localStorage, create an empty eventHistory array and an empty recentEventSearched string
   if (!eventHistory) {
     eventHistory = [];
   }
 
-  if (!recentEventSearched) {
-    recentEventSearched = "";
-  }
+  // if (!recentEventSearched) {
+  //   recentEventSearched = "";
+  // }
 
   // clear any previous values from th search-history ul
   $("searchHistory").empty();
