@@ -7,6 +7,7 @@ Enter a band name to find out dates and locations where your favorite band is pl
 ## Screenshot
 
 ## Deployed Application
+https://jessicam04.github.io/wheres-the-band/
 
 ## GitHub Repository Link
 https://github.com/JessicaM04/wheres-the-band
