@@ -25,7 +25,7 @@ var eventResultsEl = document.querySelector("#eventResults");
 var directionsListEl = document.querySelector("#directionsList");
 
 var eventHistory = [];
-// var recentEventSearched = "";
+var recentEventSearched = "";
 
 //       });
 //     }
@@ -135,10 +135,9 @@ var displayDirections = function (lat, lon) {
 // function to save the event search history to local storage
 
 var saveEvent = function (events) {
-  if (!eventHistory.includes(events) || events === null) {
+  if (!eventHistory.includes(events) && events != "") {
     eventHistory.push(events);
     console.log(events);
-
     // $("#searchHistory").append(
     //   "<a href='#' class='border-2 border-black rounded-md px-10 py-10 ml-10' id='" +
     //     "'>" +
@@ -151,27 +150,28 @@ var saveEvent = function (events) {
   localStorage.setItem("searcheventHistory", JSON.stringify(eventHistory));
   // save the lastCitySearched to local storage
 
-  // localStorage.setItem(
-  //   "recentEventSearched",
-  //   JSON.stringify(recentEventSearched)
-  // );
+  localStorage.setItem(
+    "recentEventSearched",
+    JSON.stringify(recentEventSearched)
+  );
 
   //display event history array
   loadEventHistory();
+  console.log(eventHistory);
 };
 
 var loadEventHistory = function () {
   eventHistory = JSON.parse(localStorage.getItem("searcheventHistory"));
-  // recentEventSearched = JSON.parse(localStorage.getItem("recentEventSearched"));
+  recentEventSearched = JSON.parse(localStorage.getItem("recentEventSearched"));
 
   // if nothing in localStorage, create an empty eventHistory array and an empty recentEventSearched string
   if (!eventHistory) {
     eventHistory = [];
   }
 
-  // if (!recentEventSearched) {
-  //   recentEventSearched = "";
-  // }
+  if (!recentEventSearched) {
+    recentEventSearched = "";
+  }
 
   // clear any previous values from th search-history ul
   $("#searchHistory").empty();
@@ -186,6 +186,7 @@ var loadEventHistory = function () {
         eventHistory[i] +
         "</a>"
     );
+    console.log(eventHistory.length);
   }
 };
 // load search history from local storage
@@ -209,5 +210,5 @@ $("#searchHistory").on("click", function (event) {
   let prevEvent = $(event.target).closest("a").attr("id");
   // pass it's id value to the getEventNear function
   getEventNear(prevEvent);
-  //   // console.log(prevEvent);
+  console.log(prevEvent);
 });
