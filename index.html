@@ -31,9 +31,7 @@
             <input id="eventName" class="border-2 border-black rounded-md bg-slate-300" type="text"/>        
             <button id="searchBtn" class="mb-12" type="submit">Search</button>
             <form id="event-form"></form> 
-          </div>
-          <div id="searchHistory" class="ml-10 border-2 border-black rounded-md">
-            <p>Search history results go here</p>
+            <ul class="flex flex-wrap flex-col" id="searchHistory"></ul>
           </div>
         </div>
         <div id="rightSection"  class="pt-10 ml-10 mb-10 flex flex-wrap w-3/4">
@@ -43,11 +41,8 @@
           
           <div id="eventDirections" class="border-2 border-black rounded-md px-10 py-10">
             <h1>Directions to your event</h1>
-            <h1 class="pt-10 pb-2">Your Starting Location:</h1>
-            <input id="startLocation" class="border-2 border-black rounded-md bg-slate-300" type="text"/>
             <div>
-              <button id="locBtn" class="mb-12" type="submit">Get Directions</button>
-              <ul id="directionsList">
+              <ul id="directionsList" class="w-full">
               </ul>
             </div>          
           </div>
@@ -55,9 +50,24 @@
       </div>
     </div>
 
+    <!-- The Modal -->
+    <div id="locModal" class="hidden fixed z-0 pt=5 left-20 top-20 max-w-full max-h-full bg-white">
+
+      <!-- Modal content -->
+      <div class="modal-content bg-white m-auto p-5 border-solid border-black w-4/5">
+        <span class="close text-gray-400 float-right text-2xl font-bold hover:text-black hover:cursor-pointer focus:text-black focus:cursor-pointer">&times;</span>
+        <h1 class="pt-10 pb-2">Your Starting Location:</h1>
+            <input id="startLocation" class="border-2 border-black rounded-md bg-slate-300" type="text"/>
+            <button id="locBtn" class="mb-12" type="submit">Get Directions</button>
+      </div>
+
+    </div>
+
     <script src = " https://MomentJS.com/downloads/moment.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
   <footer class="bg-slate-300 pb-20 pl-10 bg-sky-800 text-white">Created by Team RRMJ</footer>
+
 </html>
+
