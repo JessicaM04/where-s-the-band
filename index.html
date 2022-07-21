@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-slate-300">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,7 +16,6 @@
         }
       }
     </script>
-
     <title class="bg-hero-image">Event Finder</title>
   </head>
   <div class="bg-hero-image">
@@ -24,29 +23,31 @@
   </div>
   <body>
     <div class="bg-slate-300">
-      <div class="search-container bg-slate-300 flex flex-wrap">
+      <div class="search-container bg-slate-300 flex flex-wrap pb-10">
         <div id="leftSection w-1/4">
           <div id="searchParameters" class="ml-10 ">
             <h1 class="pt-10 pb-2 mr-20">Search For An Event By City:</h1>
             <input id="eventName" class="border-2 border-black rounded-md bg-slate-300" type="text"/>        
-            <button id="searchBtn" class="mb-12" type="submit">Search</button>
+            <button id="searchBtn" class="mb-2" type="submit">Search</button>
+            <h1 class="pt-10 pb-2">Your Starting Location:</h1>
+            <input id="startLocation" class="border-2 border-black rounded-md bg-slate-300" type="text"/>
+            <button id="locBtn" class="mb-12" type="submit">Get Directions</button>
+
             <form id="event-form"></form> 
           </div>
           <div id="searchHistory" class="ml-10 border-2 border-black rounded-md">
             <p>Search history results go here</p>
           </div>
         </div>
-        <div id="rightSection"  class="pt-10 ml-10 mb-10 flex flex-wrap w-3/4">
+        <div id="rightSection"  class="pt-10 ml-10 mb-10 flex flex-wrap">
           <div id="eventResults" class="mb-20 mr-10 border-2 border-black rounded-md px-10 py-10">
             <h1>Your event location</h1>
           </div>
           
           <div id="eventDirections" class="border-2 border-black rounded-md px-10 py-10">
             <h1>Directions to your event</h1>
-            <h1 class="pt-10 pb-2">Your Starting Location:</h1>
-            <input id="startLocation" class="border-2 border-black rounded-md bg-slate-300" type="text"/>
+            
             <div>
-              <button id="locBtn" class="mb-12" type="submit">Get Directions</button>
               <ul id="directionsList">
               </ul>
             </div>          

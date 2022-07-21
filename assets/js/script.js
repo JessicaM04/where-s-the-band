@@ -18,8 +18,8 @@
     //         console.log(data);
     //         displayEvent(data);
     
-    var eventInputEl = document.querySelector("#eventName");
-    var eventContainerEl = document.querySelector("#event-container");
+var eventInputEl = document.querySelector("#eventName");
+var eventContainerEl = document.querySelector("#event-container");
 var searchEventEl = document.querySelector("#event-search");
 var eventFormEl = document.querySelector("event-form");
 var searchBtnEl = document.querySelector("#searchBtn")
@@ -126,7 +126,8 @@ var displayDirections = function(lat,lon) {
   var apiStart="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin="
   var key="&key=AIzaSyD977niwAg_ga4uwIxlClUPRMYJ9IcsNCA"
   var apiMiddle="&destination="
-  var origin = "Greensboro"//document.getElementById("#startLocation").value
+  var origin = document.getElementById("#startLocation")
+
   var destination = lat+","+lon;
   var apiUrl=apiStart+origin+apiMiddle+destination+key;
   fetch(apiUrl).then(function(response){
