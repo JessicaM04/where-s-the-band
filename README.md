@@ -13,7 +13,6 @@ https://jessicam04.github.io/wheres-the-band/
 https://github.com/JessicaM04/wheres-the-band
 
 ## Technology Used
-
 - JavaScript
 - SeatGeek API
 - Google Map - Directions API
@@ -27,6 +26,11 @@ https://github.com/JessicaM04/wheres-the-band
 - Rodolfo Ramos - rramosx11
 - William Michael Stolley - MikeStolley
 
-## Credits
+## Task Breakdown
+Regetta - Google Maps API call
+Rodolfo - save recent searches to localStorage
+W. Michael - SeatGeek API call/input form
+Jessica - HTML & Tailwind CSS/presentation slides
 
+## Credits
 - <a href="https://www.pexels.com/photo/people-having-a-concert-1190297/" title="People Having a Concert">Photo by Wendy Wei</a>
