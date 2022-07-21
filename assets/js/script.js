@@ -50,7 +50,6 @@ var displayEvent = function (events) {
       "rounded-md",
       "px-2",
       "py-2",
-      "ml-10",
       "mb-2"
     );
     eventResultsEl.classList.remove(
