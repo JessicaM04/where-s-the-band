@@ -97,6 +97,7 @@ var displayDirections = function (lat, lon) {
         console.log(data.routes[0].legs[0].steps.length);
         for (let i = 0; i < data.routes[0].legs[0].steps.length; i++) {
           var directionsLi = document.createElement("li");
+          directionsLi.classList.add("pb-3");
           var directionsArr = data.routes[0].legs[0].steps[i].html_instructions;
           console.log(directionsArr);
           directionsLi.innerHTML = i + 1 + ". " + directionsArr + "</br>";
@@ -136,7 +137,7 @@ var loadEventHistory = function () {
   for (i = 0; i < eventHistory.length; i++) {
     // add the event as a link, set it's id, and append it to the search-history ul
     $("#searchHistory").append(
-      "<a href='#' class='border-2 border-black rounded-md px-2 py-2 ml-10 mb-2' id='" +
+      "<a href='#' class='border-2 border-black rounded-md px-2 py-2 mb-2 bg-slate-300' id='" +
         eventHistory[i] +
         "'>" +
         eventHistory[i] +

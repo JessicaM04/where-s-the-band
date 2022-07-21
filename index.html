@@ -24,35 +24,35 @@
     </header>
   </div>
   <body>
-    <div class="bg-slate-300">
-      <div class="search-container bg-slate-300 flex flex-wrap pb-10">
+    <div class="bg-slate-600">
+      <div class="search-container bg-slate-600 flex flex-wrap pb-10">
         <div id="leftSection w-1/4">
-          <div id="searchParameters" class="ml-10">
-            <h1 class="pt-10 pb-2 mr-20">Search For An Event By City:</h1>
+          <div id="searchParameters" class="ml-10 ">
+            <h1 class="pt-3 px-4 mr-20 mt-10 mb-3 bg-slate-300 rounded-md">Search For An Event By City:</h1>
             <input
               id="eventName"
-              class="border-2 border-black rounded-md bg-slate-300"
+              class="border-2 border-black rounded-md bg-slate-100"
               type="text"
               placeholder="Enter city name..."
             />
-            <button id="searchBtn" class="mb-12" type="submit">Search</button>
+            <button id="searchBtn" class="mb-12 text-white" type="submit">Search</button>
             <form id="event-form"></form>
             <ul class="flex flex-wrap flex-col" id="searchHistory"></ul>
           </div>
         </div>
-        <div id="rightSection" class="pt-10 ml-10 mb-10 flex flex-wrap w-3/4">
+        <div id="rightSection" class="pt-10 ml-10 mb-10 flex flex-wrap">
           <div
             id="eventResults"
-            class="mb-20 mr-10 border-2 border-black rounded-md px-10 py-10"
+            class="mb-20 mr-10 border-2 border-black rounded-md px-10 py-10 bg-slate-300"
           >
             <h1>Your event location</h1>
           </div>
 
           <div
             id="eventDirections"
-            class="border-2 border-black rounded-md px-10 py-10"
+            class="border-2 border-black rounded-md px-10 py-10 max-w-lg bg-slate-300"
           >
-            <h1>Directions to your event</h1>
+            <h1 class="text-xl font-bold pb-5">Directions to your event</h1>
             <div>
               <ul id="directionsList" class="w-full"></ul>
             </div>
