@@ -25,6 +25,7 @@ var eventResultsEl = document.querySelector("#eventResults");
 var directionsListEl = document.querySelector("#directionsList");
 
 var eventHistory = [];
+// var recentEventSearched = "";
 
 //       });
 //     }
@@ -79,6 +80,7 @@ var displayEvent = function (events) {
   }
   // recentEventSearched = currentEvent;
   saveEvent(eventInputEl.value);
+  console.log(eventInputEl.value);
 };
 
 var eventSubmitHandler = function (event) {
@@ -102,10 +104,6 @@ var eventSubmitHandler = function (event) {
 
 //container with event name and location, append it
 //dynamically set up divs, fill with textcontent, header \
-
-//   recentEventSearched = eventData.name;
-// to be added at a later ppint
-//   saveEvent(eventData.name);
 
 var displayDirections = function (lat, lon) {
   var apiStart =
@@ -137,19 +135,16 @@ var displayDirections = function (lat, lon) {
 // function to save the event search history to local storage
 
 var saveEvent = function (events) {
-  if (!eventHistory.includes(events)) {
+  if (!eventHistory.includes(events) || events === null) {
     eventHistory.push(events);
-    $("#searchHistory").append(
-      // "<a href='#' class='border-2 border-black rounded-md px-10 py-10 ml-10' id='" +
-      //   events +
-      //   "'>" +
-      //   events +
-      //   "</a>"
-      "<a href='#' class='border-2 border-black rounded-md px-10 py-10 ml-10' id='" +
-        events +
-        "'>" +
-        "</a>"
-    );
+    console.log(events);
+
+    // $("#searchHistory").append(
+    //   "<a href='#' class='border-2 border-black rounded-md px-10 py-10 ml-10' id='" +
+    //     "'>" +
+    //     events +
+    //     "</a>"
+    // );
   }
   // save the eventHistory array to local storage
 
@@ -179,7 +174,7 @@ var loadEventHistory = function () {
   // }
 
   // clear any previous values from th search-history ul
-  $("searchHistory").empty();
+  $("#searchHistory").empty();
 
   // for loop that will run through all the events found in the array
   for (i = 0; i < eventHistory.length; i++) {
@@ -197,9 +192,9 @@ var loadEventHistory = function () {
 loadEventHistory();
 
 // start page with the last event searched if there is one
-if (recentEventSearched != "") {
-  getEventNear(recentEventSearched);
-}
+// if (recentEventSearched != "") {
+//   getEventNear(recentEventSearched);
+// }
 
 searchBtnEl.addEventListener("click", eventSubmitHandler);
 eventResultsEl.addEventListener("click", function (event) {
@@ -209,7 +204,7 @@ eventResultsEl.addEventListener("click", function (event) {
   var lon = event.target.parentNode.dataset.lon;
   displayDirections(lat, lon);
 });
-$("#search-history").on("click", function (event) {
+$("#searchHistory").on("click", function (event) {
   // get the links id value
   let prevEvent = $(event.target).closest("a").attr("id");
   // pass it's id value to the getEventNear function
