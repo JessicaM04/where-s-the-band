@@ -84,10 +84,11 @@ var eventSubmitHandler = function (event) {
 //display directions in directions container
 var displayDirections = function (lat, lon) {
   var apiStart =
-    "https://maps.googleapis.com/maps/api/directions/json?origin=";
+    "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=";
   var key = "&key=AIzaSyD977niwAg_ga4uwIxlClUPRMYJ9IcsNCA";
   var apiMiddle = "&destination=";
   var destination = lat + "," + lon;
+  origin = originEl.value.trim();
   var apiUrl = apiStart + origin + apiMiddle + destination + key;
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
