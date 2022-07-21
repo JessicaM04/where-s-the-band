@@ -1,8 +1,8 @@
-# wheres-the-band
+# event-finder
 
 ## Description
 
-Enter a band name to find out dates and locations where your favorite band is playing then based on the selected event, get directions to that event.
+Enter a city to find out events along with dates and locations in that city; then based on the selected event, get directions to that event.
 
 ## Screenshot
 
