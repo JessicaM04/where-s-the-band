@@ -84,7 +84,7 @@ var eventSubmitHandler = function (event) {
 //display directions in directions container
 var displayDirections = function (lat, lon) {
   var apiStart =
-    "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=";
+    "https://maps.googleapis.com/maps/api/directions/json?origin=";
   var key = "&key=AIzaSyD977niwAg_ga4uwIxlClUPRMYJ9IcsNCA";
   var apiMiddle = "&destination=";
   var destination = lat + "," + lon;
@@ -142,6 +142,7 @@ var loadEventHistory = function () {
         "</a>"
     );
   }
+
 };
 // load search history from local storage
 loadEventHistory();
@@ -165,7 +166,7 @@ eventResultsEl.addEventListener("click", function (event) {
       modal.style.display = "none";
     };
 
-    // When the user clicks anywhere outside of the modal, close it
+    // When the user submits their start location, close it
     locBtnEl.onclick = function () {
       origin = originEl.value.trim();
       modal.style.display = "none";
