@@ -32,17 +32,22 @@ var displayEvent = function (events) {
     var titleHolder = document.createElement("h3")
     var addressHolder1 = document.createElement("p")
     var addressHolder2 = document.createElement("p")
+    var timeDateHolder = document.createElement("p")
+    var timeDateHolder = moment(currentEvent.datetime_local).format("LLLL")
+
+    
     titleHolder.textContent = currentEvent.title + " - " + currentEvent.type
     titleHolder.classList.add("font-bold", "text-base")
     addressHolder1.textContent = currentEvent.venue.address
     addressHolder2.textContent = currentEvent.venue.extended_address
+    timeDateHolder.textContent = currentEvent.datetime_local
     eventHolder.setAttribute("data-lat", currentEvent.venue.location.lat)
     eventHolder.setAttribute("data-lon", currentEvent.venue.location.lon)
     eventHolder.classList.add("border-2", "border-black", "rounded-md", "px-2", "py-2", "ml-10","mb-2");
     eventResultsEl.classList.remove("mb-20", "border-2", "border-black", "rounded-md", "px-10", "py-10")
     eventImg.setAttribute("src", currentEvent.performers[0].image)
-    eventHolder.append(titleHolder, eventImg, addressHolder1, addressHolder2)
-    eventResultsEl.append(eventHolder)
+    eventHolder.append(titleHolder, eventImg, addressHolder1, addressHolder2, timeDateHolder)
+    eventResults.append(eventHolder)
   }
   saveEvent(eventInputEl.value);
 };
