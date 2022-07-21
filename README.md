@@ -13,6 +13,11 @@ Enter a city to find out events along with dates and locations in that city; the
 
 ![Screen Shot 2022-07-21 at 5 01 16 PM](https://user-images.githubusercontent.com/103011054/180315695-691e05df-4b13-4b05-8881-8f864102d7c8.png)
 
+## Attention
+- Before visiting our deployed site please copy and paste the following url and request temporary access to the demo server.
+
+https://cors-anywhere.herokuapp.com/corsdemo
+
 ## Deployed Application
 https://jessicam04.github.io/wheres-the-band/
 
