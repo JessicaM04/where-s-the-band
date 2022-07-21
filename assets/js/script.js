@@ -101,12 +101,14 @@ var saveEvent = function (events) {
   //display event history array
   loadEventHistory();
 };
+
 var loadEventHistory = function () {
   eventHistory = JSON.parse(localStorage.getItem("searcheventHistory"));
   // recentEventSearched = JSON.parse(localStorage.getItem("recentEventSearched"));
   // if nothing in localStorage, create an empty eventHistory array and an empty recentEventSearched string
   if (!eventHistory) {
     eventHistory = [];
+    return false;
   }
   // if (!recentEventSearched) {
   //   recentEventSearched = "";
