@@ -27,10 +27,10 @@ https://github.com/JessicaM04/wheres-the-band
 - William Michael Stolley - MikeStolley
 
 ## Task Breakdown
-Regetta - Google Maps API call
-Rodolfo - save recent searches to localStorage
-W. Michael - SeatGeek API call/input form
-Jessica - HTML & Tailwind CSS/presentation slides
+- Regetta - Google Maps API call
+- Rodolfo - save recent searches to localStorage
+- W. Michael - SeatGeek API call/input form
+- Jessica - HTML & Tailwind CSS/presentation slides
 
 ## Credits
 - <a href="https://www.pexels.com/photo/people-having-a-concert-1190297/" title="People Having a Concert">Photo by Wendy Wei</a>
