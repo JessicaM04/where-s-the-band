@@ -180,7 +180,7 @@ var loadEventHistory = function () {
   for (i = 0; i < eventHistory.length; i++) {
     // add the event as a link, set it's id, and append it to the search-history ul
     $("#searchHistory").append(
-      "<a href='#' class='border-2 border-black rounded-md px-10 py-10 ml-10' id='" +
+      "<a href='#' class='border-2 border-black rounded-md px-2 py-2 ml-10' id='" +
         eventHistory[i] +
         "'>" +
         eventHistory[i] +
@@ -209,5 +209,6 @@ $("#searchHistory").on("click", function (event) {
   let prevEvent = $(event.target).closest("a").attr("id");
   // pass it's id value to the getEventNear function
   getEventNear(prevEvent);
+  event.preventDefault();
   console.log(prevEvent);
 });
