@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-slate-300">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,81 +10,86 @@
         theme: {
           extend: {
             backgroundImage: {
-              'hero-image': "url('./assets/images/concert.png')",
-            }
-          }
-        }
-      }
+              "hero-image": "url('./assets/images/concert.png')",
+            },
+          },
+        },
+      };
     </script>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+
     <title class="bg-hero-image">Event Finder</title>
   </head>
   <div class="bg-hero-image">
-    <header class="text-left text-[60px] h-52 text-white ml-10">Event Finder</header>
+    <header class="text-left text-[60px] h-52 text-white ml-10">
+      Event Finder
+    </header>
   </div>
   <body>
     <div class="bg-slate-300">
       <div class="search-container bg-slate-300 flex flex-wrap">
         <div id="leftSection w-1/4">
-          <div id="searchParameters" class="ml-10 w-full">
+          <div id="searchParameters" class="ml-10">
             <h1 class="pt-10 pb-2 mr-20">Search For An Event By City:</h1>
-            <input id="eventName" class="border-2 border-black rounded-md bg-slate-300" type="text"/>        
+            <input
+              id="eventName"
+              class="border-2 border-black rounded-md bg-slate-300"
+              type="text"
+              placeholder="Enter city name..."
+            />
             <button id="searchBtn" class="mb-12" type="submit">Search</button>
-            <form id="event-form"></form> 
-          </div>
-          <div id="searchHistory" class="ml-10 border-2 border-black rounded-md">
-            <p>Search history results go here</p>
+            <form id="event-form"></form>
+            <ul class="flex flex-wrap flex-col" id="searchHistory"></ul>
           </div>
         </div>
-        <div id="searchHistory" class="border-2 border-black rounded-md px-10 py-10 ml-10">
-          <p>This is where the search history results will go.  I know we will<br/>
-            remove this text I just wanted to add extra words so we can<br/>
-            see how it will look.</p>l
-        </div>
-      </div>
-      <div id="rightSection"  class="mx-40 pt-10">
-        <div class="mb-40 border-2 border-black rounded-md px-10 py-10">
-          <h1>Your event location</h1>
-          <div id="eventResults">
+        <div id="rightSection" class="pt-10 ml-10 mb-10 flex flex-wrap w-3/4">
+          <div
+            id="eventResults"
+            class="mb-20 mr-10 border-2 border-black rounded-md px-10 py-10"
+          >
+            <h1>Your event location</h1>
           </div>
-        </div>
-        
-        <div id="eventDirections" class="border-2 border-black rounded-md px-10 py-10">
-          <h1>Directions to your event</h1>
-          <div>
-            <button id="locBtn">Enter Your Location</button>
-            <ul id="directionsList">
-            </ul>
-          </div>          
-        </div>
-      </div>
-    </div>
 
-    <!-- Modal -->
-  <div id="form-modal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title" id="form-modal">Your Location</h5>
-          <span class="close"></span>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="modalCity">City</label>
-              <input class="form-control" id="modalCity"></input>
+          <div
+            id="eventDirections"
+            class="border-2 border-black rounded-md px-10 py-10"
+          >
+            <h1>Directions to your event</h1>
+            <div>
+              <ul id="directionsList" class="w-full"></ul>
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="submitModal">Submit</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
+    <!-- The Modal -->
+    <div
+      id="locModal"
+      class="hidden fixed z-0 pt=5 left-20 top-20 max-w-full max-h-full bg-white"
+    >
+      <!-- Modal content -->
+      <div
+        class="modal-content bg-white m-auto p-5 border-solid border-black w-4/5"
+      >
+        <span
+          class="close text-gray-400 float-right text-2xl font-bold hover:text-black hover:cursor-pointer focus:text-black focus:cursor-pointer"
+          >&times;</span
+        >
+        <h1 class="pt-10 pb-2">Your Starting Location:</h1>
+        <input
+          id="startLocation"
+          class="border-2 border-black rounded-md bg-slate-300"
+          type="text"
+        />
+        <button id="locBtn" class="mb-12" type="submit">Get Directions</button>
+      </div>
+    </div>
+
+    <script src=" https://MomentJS.com/downloads/moment.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
-  <footer class="bg-slate-300 pb-20 pl-10">Created by Team RRMJ</footer>
+  <footer class="bg-slate-300 pb-20 pl-10 bg-sky-800 text-white">
+    Created by Team RRMJ
+  </footer>
 </html>
